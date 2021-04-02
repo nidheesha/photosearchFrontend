@@ -1,4 +1,6 @@
-var sdk = apigClientFactory.newClient({});
+var sdk = apigClientFactory.newClient({
+    apiKey: 'cUCDmf7PzRaMk7vi6lr1c3T6FdDrctnmDw9A0Od7'
+});
 
 function record(){
     console.log("here!");
