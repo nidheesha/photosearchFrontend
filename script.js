@@ -78,6 +78,7 @@ function uploadPhotos(){
     // var file_data = $("#file_path").prop("files")[0];
    var file = document.getElementById('img').files[0];
    var labels = document.getElementById('labels').value;
+   var name = document.getElementById('name').value;
    const reader = new FileReader();
 
    var file_data;
@@ -86,7 +87,7 @@ function uploadPhotos(){
      data => {
      
      var body = data;
-     var params = {"filename" : file.name, "bucket" : "bucket2photos", "x-amz-meta-customLabels":labels, "Content-Type" : "application/json"};
+     var params = {"filename" : file.name, "bucket" : "bucket2photos", "x-amz-meta-customLabels":labels, "x-amz-meta-name":name, "Content-Type" : "application/json"};
      var additionalParams = {};
 
      sdk.uploadPut(params, body , additionalParams).then(function(res){
